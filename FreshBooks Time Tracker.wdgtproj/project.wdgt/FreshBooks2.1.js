@@ -38,7 +38,8 @@ var invoiceList = {
 	items:["number","client_id","organization","amount","date"]};
 var estimateList = {
 	head: "estimate",
-	id:   "estimate_id", 	sort: "number",
+	id:   "estimate_id",
+	sort: "number",
 	items:["number","client_id","organization","status","amount","date"]};
 var recurringList = {
 	head: "recurring",

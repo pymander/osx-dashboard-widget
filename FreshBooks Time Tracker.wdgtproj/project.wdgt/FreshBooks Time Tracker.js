@@ -519,7 +519,6 @@ function loginKeypress(event)
 	switch (event.keyCode) {
 		case 3:
 		case 13:
-		alert(event.keyCode);
 			return loadProjects(event);
 	}
 	return true;
