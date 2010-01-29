@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css" title="AppleStyle">
+        @import "FreshBooks%20Time%20Tracker.css";
+    </style>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/setup.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/InfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/GlassButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery-1.2.2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="FreshBooks2.1.js" charset="utf-8"></script>
+    <script type="text/javascript" src="utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="json2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="FreshBooks%20Time%20Tracker.js" charset="utf-8"></script>
+
+	<style type="text/css" title="AppleStyle">@import "FreshBooks Time Tracker.css";</style>
+</head>
+<body onload="load();">
+    <div id="front">
+        <img id="frontImg" src="Images/front.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.frontimage" apple-style="image-theme: 1; image-shape: 3; image-opacity: 1.00; image-top-color: 0.1174,0.3421,0.8182; image-bottom-color: 0.0078,0.1686,0.3647; image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.0309,0.3626,0.6975; image-border-width: 3; shine-strength: 0.90; shine-alpha-level: 0.67; shine-height: 0.50; glass-arc-height: 0.06; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        
+    <img src="Images/clockbacking%203.png" id="img2">
+    <div class="apple-no-children" id="info" apple-part="com.apple.Dashcode.part.infobutton" apple-default-image-visibility="hidden"></div>
+        
+    
+    
+    <div apple-part="com.apple.Dashcode.part.glassbutton" class="apple-no-children" id="startbutton" apple-group="glassbutton"></div>
+    <div apple-part="com.apple.Dashcode.part.glassbutton" class="apple-no-children" id="stopbutton" apple-group="glassbutton" apple-default-image-visibility="hidden"></div>
+    
+    <select apple-part="com.apple.Dashcode.part.backpopupbutton" id="Projects" apple-group="popup" onchange="setTasksFromProject(event)">
+	
+	
+	<option apple-group="popup" value="-1">Projects</option>
+</select>
+    
+    
+    
+    <select apple-part="com.apple.Dashcode.part.backpopupbutton" id="Tasks" apple-group="popup">
+	
+	
+	
+<option id="option" value="-1">Tasks</option>
+    </select>
+    
+    <div apple-part="com.apple.Dashcode.part.glassbutton" class="apple-no-children" id="submithours" apple-group="glassbutton"></div>
+    <textarea class="apple-textarea apple-no-children" apple-part="com.apple.Dashcode.part.textarea" id="Notes" apple-group="textarea" onkeypress="enterToSubmitHours(event)"></textarea>
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="ellipsis" id="not" apple-group="text2"></div>
+	
+    
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="clip" id="count" apple-group="text2" onclick="editClockedTime(event)" style="cursor:pointer;"></div>
+	
+    <img src="Images/freshclock.png" id="FreshClock" ondblclick="addTimeStampToNotes(event)">
+
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="submitStatus" apple-group="text6"></div>
+
+    
+    
+    <input type="text" name="" value="0:00:00" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="updatedTime" apple-group="textfield" onblur="updateClockedTime(event)" onkeypress="validateClockedKey(event)" onchange="validateUpdatedTime(event)" apple-default-image-visibility="hidden" apple-text-overflow="clip">
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-text-overflow="ellipsis" id="url" apple-group="text" onclick="headToMyFreshBooks(event)" style="cursor:pointer;"></div>
+    <img src="Images/divider.png" id="img1">
+    <img src="Images/divider.png" id="img3">
+    </div>
+	<!-- =============================================== -->
+    <div id="back">
+       <img id="backImg" src="Images/back.png" alt="" apple-locked="true" apple-part="com.apple.Dashcode.part.backimage" apple-style=" image-radius: 12,12,12,12; image-border: 1; image-border-color: 0.1500,0.1500,0.1500; image-border-width: 3; shadow-include-shadow: 1; shadow-blur: 9.00; shadow-offset: -1.00,-6.00; shadow-color: 0.0000,0.0000,0.0000,0.3333;">
+        
+        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
+    <input type="text" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="sitename" apple-group="textfield" onkeypress="loginKeypress(event)">
+    <input type="password" name="" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield" id="authtoken" apple-group="textfield1" onkeypress="loginKeypress(event)">
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="https" apple-group="text"></div>
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="tok" apple-group="text1"></div>
+    
+    
+    
+    
+          
+    
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="statusmsg" apple-group="text3"></div>
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="versionInfo" apple-group="text3"></div>
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="freshbookscom" apple-group="text4"></div>
+    
+    <img src="Images/fblogo.png" id="freshlogo" style="cursor:pointer;" alt="Head to FreshBooks!" onclick="headToFreshBooks(event)">
+    <img src="Images/NetByte%20Design%20Studio%20-%200083.png" id="hourglass" apple-default-image-visibility="hidden">
+    <img src="Images/icoback.png" id="img4">
+	
+    <div apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" id="needhelp" apple-group="text" style="cursor:pointer;" onclick="getHelp(event)"></div>
+	
+    </div>
+
+
+
+</body>
+</html>

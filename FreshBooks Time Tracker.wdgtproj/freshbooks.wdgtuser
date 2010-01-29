@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Breakpoints</key>
+	<dict>
+		<key>FreshBooks Time Tracker.js:688</key>
+		<string>-addTimeStampToNotes</string>
+		<key>FreshBooks Time Tracker.js:689</key>
+		<string>-addTimeStampToNotes</string>
+		<key>FreshBooks Time Tracker.js:711</key>
+		<string>-addTimeStampToNotes</string>
+		<key>FreshBooks2.1.js:129</key>
+		<string>-genSort</string>
+		<key>FreshBooks2.1.js:268</key>
+		<string>-onreadystatechange</string>
+		<key>FreshBooks2.1.js:269</key>
+		<string>onreadystatechange</string>
+	</dict>
+	<key>ContentSplitViewGeometry</key>
+	<dict>
+		<key>ContentSplitViewConfig</key>
+		<integer>8</integer>
+		<key>SplitViewConfig</key>
+		<integer>3</integer>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {1089, 303}}</string>
+			<string>{{0, 313}, {1089, 724}}</string>
+		</array>
+	</dict>
+	<key>ContentViewType</key>
+	<integer>0</integer>
+	<key>Dashboard Widget Prefs</key>
+	<dict>
+		<key>id</key>
+		<string>05a68bb24033ab41</string>
+		<key>in-layer</key>
+		<true/>
+		<key>path</key>
+		<string>/private/var/folders/4y/4yRxJ1OQEfCNTaJ7L2K0y++++TI/-Tmp-/Dashcode/.FreshBooks Time Tracker.wdgtprojHUd8ZR/FreshBooks Time Tracker.wdgtproj/project.wdgt/</string>
+		<key>percent-offset-x</key>
+		<integer>0</integer>
+		<key>percent-offset-y</key>
+		<integer>0</integer>
+		<key>percent-type</key>
+		<integer>1</integer>
+		<key>percent-x</key>
+		<real>0.4140625</real>
+		<key>percent-y</key>
+		<real>0.38916665315628052</real>
+		<key>pos-x</key>
+		<integer>795</integer>
+		<key>pos-y</key>
+		<integer>467</integer>
+		<key>rosetta</key>
+		<false/>
+	</dict>
+	<key>Design time language</key>
+	<string>en.lproj</string>
+	<key>EvaluatorFrame</key>
+	<string>155 114 548 753 0 0 1920 1178 </string>
+	<key>MainSplitViewGeometry</key>
+	<dict>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {177, 1058}}</string>
+			<string>{{178, 0}, {1090, 1058}}</string>
+		</array>
+	</dict>
+	<key>MainWindowFrame</key>
+	<string>34 98 1267 1079 0 0 1920 1178 </string>
+	<key>NavigatorSplitViewGeometry</key>
+	<dict>
+		<key>ContentSplitViewConfig</key>
+		<integer>5</integer>
+		<key>SplitViewConfig</key>
+		<integer>3</integer>
+		<key>_collapsingFrameDimension</key>
+		<real>0.0</real>
+		<key>_indexOfCollapsedView</key>
+		<integer>0</integer>
+		<key>_percentageOfCollapsedView</key>
+		<real>0.0</real>
+		<key>sizes</key>
+		<array>
+			<string>{{0, 0}, {179, 543}}</string>
+			<string>{{0, 553}, {179, 484}}</string>
+		</array>
+	</dict>
+	<key>Objects view expanded items</key>
+	<array>
+		<array>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>7</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>0</integer>
+			<integer>10</integer>
+		</array>
+		<array>
+			<integer>0</integer>
+			<integer>1</integer>
+		</array>
+	</array>
+	<key>Objects view last selections</key>
+	<array>
+		<array>
+			<integer>0</integer>
+			<integer>1</integer>
+		</array>
+	</array>
+	<key>Opened Steps</key>
+	<array>
+		<integer>0</integer>
+	</array>
+</dict>
+</plist>
