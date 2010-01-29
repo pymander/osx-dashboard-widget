@@ -1,7 +1,7 @@
 // Copyright (c) 2008 2ndSite Inc. (www.freshbooks.com)
 // Licenced under the MIT license (see MITLICENSE.txt).
 
-com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0.2";
+com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0.3";
 
 debug = false;
 xmlTimeout = 15 * 1000; // Wait this many milliseconds for FreshBooks to reply before cancelling an XML call.
@@ -88,14 +88,14 @@ function load()
 
 	sync();
 
-	setElementVisibility("stopbutton",  false);
+	clocker.setStartStopButtons();
 	setElementVisibility("updatedTime", false);
 	startDisplayUpdateTimer();
 
 	// Default to showing the back when there's no auth info
 	var login = document.getElementById("sitename").value;
 	var token = document.getElementById("authtoken").value;
-	if (login.length == 0 || token.length == 0)
+	if (!validateSitename(login) || !validateToken(token))
 	{
 		setTimeout(showBack, 250);
 		return;
@@ -239,6 +239,15 @@ function clickedStartStop(event)
 	}
 }
 
+function validateSitename(sitename) {
+	if (sitename.length == 0 || sitename.search(/[^a-zA-Z0-9]/) > -1) return false;
+	return true;
+}
+function validateToken(token) {
+	if (token.length != 32 || token.search(/[^a-f0-9]/) > -1) return false;
+	return true;
+}
+
 var myProjects;
 
 // Since we return objects instead of arrays, it's handy to know if there's anyone home.
@@ -293,8 +302,10 @@ function errorLoading(list) {
 function loadTasks()
 {
     var login = document.getElementById("sitename").value;
-	var token = document.getElementById("authtoken").value;
-	var taskCount = 0;       // Semaphore for closures so they know when everyone's done
+	var token = document.getElementById("authtoken").value; 	var taskCount = 0;       // Semaphore for closures so they know when everyone's done
+
+	if (!validateSitename(login)) { setStatus("statusmsg", "Invalid site name"); return false; }
+	if (!validateToken(token)) { setStatus("statusmsg", "Invalid token"); return false; }
 	
 	for (pid in myProjects) { taskCount++; }
 	if (taskCount == 0) {
@@ -368,10 +379,8 @@ function loadProjects(event)
     var login = $("#sitename")[0].value;
 	var token = $("#authtoken")[0].value;
 	
-	if (!login || !token) {
-		setStatus("statusmsg", "Please enter your sitename and token.");
-		return false;
-	}
+	if (!validateSitename(login)) { setStatus("statusmsg", "Invalid site name"); return false; }
+	if (!validateToken(token)) { setStatus("statusmsg", "Invalid token"); return false; }
 	
 	com.freshbooks.api.fetchFullList(login,token,'project',{},xmlTimeout,
 		function (list) {
@@ -406,9 +415,10 @@ function submitHours(event)
 	var token = $("#authtoken")[0].value;
 	var r     = com.freshbooks.api.GetXMLHttpRequest(login, token, true);
 
-	if (login.length == 0 || token.length == 0)
+	if (!validateSitename(login) || !validateToken(token))
 	{
 		// Um, we need some auth info first!
+		// We shouldn't be able to get here, but it doesn't hurt. :)
 		showBack();
 		return;
 	}
@@ -429,6 +439,7 @@ function submitHours(event)
 
 	// Read notes
 	var notes = $("#Notes")[0].value;
+	notes = notes.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
 	// Notify user that we're posting
 	$("#Projects")[0].disabled = true;
@@ -464,7 +475,8 @@ function submitHours(event)
 				enableInputs();
 				
 				clocker.reset();
-			
+				widget.setPreferenceForKey(clocker.getState(), createInstancePreferenceKey("clocker"));
+
 				setStatus("submitStatus", "Hours submitted!");
 				$("#Notes")[0].value = "";
 				widget.setPreferenceForKey(null, createInstancePreferenceKey("Notes"));
@@ -477,6 +489,7 @@ function submitHours(event)
 
 	// Don't count while we're submitting
 	clocker.stopClock();
+	widget.setPreferenceForKey(clocker.getState(), createInstancePreferenceKey("clocker"));
 
 	// Fade in feedback text
 	setStatus("submitStatus", "Submitting...", false, xmlTimeout);
@@ -659,6 +672,7 @@ function updateClockedTime(event,throwaway)
 	if (!ta[2]) { ta[2] = 0; }
 	clocker.stopClock(); // Just to make sure
 	clocker.millisecondsClocked = 1000 * (ta[2] + 60 * (ta[1] + 60 * ta[0]));	
+	widget.setPreferenceForKey(clocker.getState(), createInstancePreferenceKey("clocker"));
 }
 
 function tabToNextField()

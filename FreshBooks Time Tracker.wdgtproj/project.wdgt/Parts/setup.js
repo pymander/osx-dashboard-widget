@@ -11,12 +11,12 @@ function setupParts() {
     CreateGlassButton('submithours', { onclick: 'submitHours', text: 'Submit Hours' });
     CreateText('not', { text: 'Notes' });
     CreateText('statusmsg', { text: 'statusmsg' });
-    CreateText('versionInfo', { text: 'TIME TRACKER v 1.0.2' });
+    CreateText('versionInfo', { text: 'TIME TRACKER v 1.0.3' });
     CreateGlassButton('done', { onclick: 'loadProjects', text: 'Done' });
     CreateText('freshbookscom', { text: '.freshbooks.com' });
     CreateText('count', { text: '0:00:00' });
     CreateText('submitStatus', { text: 'submitStatus' });
     CreateText('url', { text: 'yoursite.freshbooks.com' });
-    CreateText('needhelp', { text: 'Need Help?' });
+    CreateText('needhelp', { text: 'Need Help? Find your token!' });
 }
 window.addEventListener('load', setupParts, false);

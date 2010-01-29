@@ -321,11 +321,12 @@ body {
 
 #needhelp {
     position: absolute;
+	text-decoration: underline;
     font-family: HelveticaNeue;
     font-size: 10pt;
     text-overflow: ellipsis;
     overflow: hidden;
     left: 35px;
     top: 220px;
-    color: rgb(203, 203, 203);
+    color: lightblue;
 }

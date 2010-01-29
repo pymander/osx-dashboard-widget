@@ -13,9 +13,9 @@
 	<key>CFBundleName</key>
 	<string>FreshBooks Time Tracker</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.3</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.3</string>
 	<key>CloseBoxInsetX</key>
 	<integer>5</integer>
 	<key>CloseBoxInsetY</key>

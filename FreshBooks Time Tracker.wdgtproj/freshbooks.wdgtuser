@@ -4,25 +4,25 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>FreshBooks Time Tracker.js:600</key>
-		<string>validateClockedKey</string>
-		<key>FreshBooks Time Tracker.js:640</key>
+		<key>FreshBooks Time Tracker.js:614</key>
+		<string>-validateClockedKey</string>
+		<key>FreshBooks Time Tracker.js:654</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:643</key>
+		<key>FreshBooks Time Tracker.js:657</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:644</key>
+		<key>FreshBooks Time Tracker.js:658</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:645</key>
+		<key>FreshBooks Time Tracker.js:659</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:647</key>
+		<key>FreshBooks Time Tracker.js:661</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:650</key>
+		<key>FreshBooks Time Tracker.js:664</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:651</key>
+		<key>FreshBooks Time Tracker.js:665</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:655</key>
+		<key>FreshBooks Time Tracker.js:669</key>
 		<string>-updateClockedTime</string>
-		<key>FreshBooks Time Tracker.js:656</key>
+		<key>FreshBooks Time Tracker.js:670</key>
 		<string>-updateClockedTime</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
@@ -48,25 +48,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>ab42737f3e33ab41</string>
+		<string>f6242060d54aab41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/4y/4yRxJ1OQEfCNTaJ7L2K0y++++TI/-Tmp-/Dashcode/.FreshBooks Time Tracker.wdgtprojc6jmPO/FreshBooks Time Tracker.wdgtproj/project.wdgt/</string>
+		<string>/private/var/folders/4y/4yRxJ1OQEfCNTaJ7L2K0y++++TI/-Tmp-/Dashcode/.FreshBooks Time Tracker.wdgtproj1tYVTH/FreshBooks Time Tracker.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>3</integer>
+		<integer>1</integer>
 		<key>percent-x</key>
-		<real>0.1276041716337204</real>
+		<real>0.11770833283662796</real>
 		<key>percent-y</key>
-		<real>0.37749999761581421</real>
+		<real>0.25333333015441895</real>
 		<key>pos-x</key>
-		<integer>1346</integer>
+		<integer>226</integer>
 		<key>pos-y</key>
-		<integer>482</integer>
+		<integer>304</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -89,7 +89,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>34 98 1267 1079 0 0 1920 1178 </string>
+	<string>645 99 1267 1079 0 0 1920 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -136,8 +136,8 @@
 	<array>
 		<array>
 			<integer>0</integer>
-			<integer>0</integer>
-			<integer>13</integer>
+			<integer>1</integer>
+			<integer>12</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
