@@ -4,18 +4,26 @@
 <dict>
 	<key>Breakpoints</key>
 	<dict>
-		<key>FreshBooks Time Tracker.js:694</key>
-		<string>-addTimeStampToNotes</string>
-		<key>FreshBooks Time Tracker.js:695</key>
-		<string>-addTimeStampToNotes</string>
-		<key>FreshBooks Time Tracker.js:717</key>
-		<string>-addTimeStampToNotes</string>
-		<key>FreshBooks2.1.js:129</key>
-		<string>-genSort</string>
-		<key>FreshBooks2.1.js:276</key>
-		<string>-onreadystatechange</string>
-		<key>FreshBooks2.1.js:277</key>
-		<string>onreadystatechange</string>
+		<key>FreshBooks Time Tracker.js:600</key>
+		<string>validateClockedKey</string>
+		<key>FreshBooks Time Tracker.js:640</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:643</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:644</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:645</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:647</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:650</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:651</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:655</key>
+		<string>-updateClockedTime</string>
+		<key>FreshBooks Time Tracker.js:656</key>
+		<string>-updateClockedTime</string>
 	</dict>
 	<key>ContentSplitViewGeometry</key>
 	<dict>
@@ -31,8 +39,8 @@
 		<real>0.0</real>
 		<key>sizes</key>
 		<array>
-			<string>{{0, 0}, {1089, 56}}</string>
-			<string>{{0, 66}, {1089, 971}}</string>
+			<string>{{0, 0}, {1089, 286}}</string>
+			<string>{{0, 296}, {1089, 741}}</string>
 		</array>
 	</dict>
 	<key>ContentViewType</key>
@@ -40,25 +48,25 @@
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
-		<string>9564c5112c23ab41</string>
+		<string>ab42737f3e33ab41</string>
 		<key>in-layer</key>
 		<true/>
 		<key>path</key>
-		<string>/private/var/folders/4y/4yRxJ1OQEfCNTaJ7L2K0y++++TI/-Tmp-/Dashcode/.FreshBooks Time Tracker.wdgtprojQktX1t/FreshBooks Time Tracker.wdgtproj/project.wdgt/</string>
+		<string>/private/var/folders/4y/4yRxJ1OQEfCNTaJ7L2K0y++++TI/-Tmp-/Dashcode/.FreshBooks Time Tracker.wdgtprojc6jmPO/FreshBooks Time Tracker.wdgtproj/project.wdgt/</string>
 		<key>percent-offset-x</key>
 		<integer>0</integer>
 		<key>percent-offset-y</key>
 		<integer>0</integer>
 		<key>percent-type</key>
-		<integer>1</integer>
+		<integer>3</integer>
 		<key>percent-x</key>
-		<real>0.4140625</real>
+		<real>0.1276041716337204</real>
 		<key>percent-y</key>
-		<real>0.38916665315628052</real>
+		<real>0.37749999761581421</real>
 		<key>pos-x</key>
-		<integer>795</integer>
+		<integer>1346</integer>
 		<key>pos-y</key>
-		<integer>467</integer>
+		<integer>482</integer>
 		<key>rosetta</key>
 		<false/>
 	</dict>
@@ -128,8 +136,8 @@
 	<array>
 		<array>
 			<integer>0</integer>
-			<integer>1</integer>
-			<integer>1</integer>
+			<integer>0</integer>
+			<integer>13</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>

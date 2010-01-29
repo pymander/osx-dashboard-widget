@@ -11,7 +11,7 @@ function setupParts() {
     CreateGlassButton('submithours', { onclick: 'submitHours', text: 'Submit Hours' });
     CreateText('not', { text: 'Notes' });
     CreateText('statusmsg', { text: 'statusmsg' });
-    CreateText('versionInfo', { text: 'TIME TRACKER v 1.0' });
+    CreateText('versionInfo', { text: 'TIME TRACKER v 1.0.2' });
     CreateGlassButton('done', { onclick: 'loadProjects', text: 'Done' });
     CreateText('freshbookscom', { text: '.freshbooks.com' });
     CreateText('count', { text: '0:00:00' });

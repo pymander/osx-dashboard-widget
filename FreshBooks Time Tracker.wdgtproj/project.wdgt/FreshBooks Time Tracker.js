@@ -1,7 +1,7 @@
 // Copyright (c) 2008 2ndSite Inc. (www.freshbooks.com)
 // Licenced under the MIT license (see MITLICENSE.txt).
 
-com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0";
+com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0.2";
 
 debug = false;
 xmlTimeout = 15 * 1000; // Wait this many milliseconds for FreshBooks to reply before cancelling an XML call.
@@ -268,9 +268,10 @@ function setTasksFromProject() {
 
 	for (var i in sortedList)
 	{
-		tasks.add( new Option(
-			sortedList[i].name,
-			sortedList[i].id));
+		// We have to set innerHTML, otherwise things like &amp; will show up literally.
+		var o = new Option( "", sortedList[i].id);
+		o.innerHTML = sortedList[i].name.replace(/</g, "&lt;");
+		tasks.add(o);
 	}
 }
 
@@ -355,9 +356,10 @@ function fillOutProjects()
 	for (var i in sortedList)
 	{
 		if (debug) alert("Adding " + sortedList[i].id + " '" + sortedList[i].name + "'");
-		pr.add( new Option(
-			sortedList[i].name,
-			sortedList[i].id));
+		// We have to set innerHTML, otherwise things like &amp; will show up literally.
+		var o = new Option("",sortedList[i].id);
+		o.innerHTML = sortedList[i].name.replace(/</g, "&lt;");
+		pr.add(o);
 	}
 }
 
@@ -649,6 +651,12 @@ function updateClockedTime(event,throwaway)
 	// Update clocked time with what we have...
 	var ts = $("#updatedTime")[0].value;
 	var ta = map(getInt, ts.split(":"));
+	// Apparently it's possible to get bad data past the input validator
+	// (namely, you can select-all and delete the whole time display).  If
+	// something Really Silly like that happens, just set things to 0.
+	if (!ta[0]) { ta[0] = 0; }
+	if (!ta[1]) { ta[1] = 0; }
+	if (!ta[2]) { ta[2] = 0; }
 	clocker.stopClock(); // Just to make sure
 	clocker.millisecondsClocked = 1000 * (ta[2] + 60 * (ta[1] + 60 * ta[0]));	
 }
