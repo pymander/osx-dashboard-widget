@@ -44,7 +44,7 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
@@ -89,7 +89,7 @@
 		</array>
 	</dict>
 	<key>MainWindowFrame</key>
-	<string>645 99 1267 1079 0 0 1920 1178 </string>
+	<string>320 99 1267 1079 0 0 1920 1178 </string>
 	<key>NavigatorSplitViewGeometry</key>
 	<dict>
 		<key>ContentSplitViewConfig</key>
@@ -135,9 +135,7 @@
 	<key>Objects view last selections</key>
 	<array>
 		<array>
-			<integer>0</integer>
-			<integer>1</integer>
-			<integer>12</integer>
+			<integer>2</integer>
 		</array>
 	</array>
 	<key>Opened Steps</key>
