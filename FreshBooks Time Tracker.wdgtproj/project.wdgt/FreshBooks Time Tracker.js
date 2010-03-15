@@ -1,7 +1,7 @@
 // Copyright (c) 2008 2ndSite Inc. (www.freshbooks.com)
 // Licenced under the MIT license (see MITLICENSE.txt).
 
-com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0.4";
+com.freshbooks.api.UA = "FreshBooks Time Tracker Widget 1.0.5";
 
 debug = false;
 xmlTimeout = 15 * 1000; // Wait this many milliseconds for FreshBooks to reply before cancelling an XML call.
@@ -240,7 +240,7 @@ function clickedStartStop(event)
 }
 
 function validateSitename(sitename) {
-	if (sitename.length == 0 || sitename.search(/[^a-zA-Z0-9]/) > -1) return false;
+	if (sitename.length == 0 || sitename.search(/[^a-zA-Z0-9-]/) > -1) return false;
 	return true;
 }
 function validateToken(token) {
