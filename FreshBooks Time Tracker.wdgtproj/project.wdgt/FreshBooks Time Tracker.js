@@ -425,8 +425,9 @@ function submitHours(event)
 	}
 
     // Read time; we must log in (fractional) hours.
-	// 3600 seconds per hour, 1000 milliseconds per second
-	var loggedTime = clocker.getTime() / 3600000;
+    // 3600 seconds per hour, 1000 milliseconds per second
+    // (This should just round time to two decimals instead of thousands-of-hours - @pymander)
+    var loggedTime = Math.round(clocker.getTime() / 36000) / 100;
 
 	// Read Project
 	var projectId = $("#Projects")[0].value;
